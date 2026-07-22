@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bouchra Store | متجر بوشرى - حقائب وأحذية نسائية</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--espresso:#2B1B14;--espresso-2:#3A2A1F;--tan:#A9713F;--brass:#C9A227;--oxblood:#6B1E23;--ivory:#F1E8DD;--ivory-2:#E8DBC8;--ink:#241811;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ivory);color:var(--ink);font-family:'Tajawal',sans-serif;line-height:1.7;overflow-x:hidden;}
+h1,h2,h3,.display{font-family:'Aref Ruqaa',serif;font-weight:700;color:var(--espresso);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.stitch{display:flex;align-items:center;justify-content:center;gap:10px;padding:28px 0;}
+.stitch::before,.stitch::after{content:"";flex:1;max-width:180px;height:0;border-top:2px dashed var(--tan);}
+.stitch .rivet{width:9px;height:9px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 3px var(--ivory),0 0 0 4px var(--tan);}
+header{position:sticky;top:0;z-index:50;background:rgba(241,232,221,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--ivory-2);}
+.nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+.brand{font-family:'Aref Ruqaa',serif;font-size:1.6rem;font-weight:700;color:var(--espresso);letter-spacing:1px;}
+.brand span{color:var(--oxblood);}
+.nav-links{display:flex;gap:28px;font-weight:500;font-size:.95rem;}
+.nav-links a:hover{color:var(--oxblood);}
+.nav-cta{background:var(--espresso);color:var(--ivory)!important;padding:9px 20px;border-radius:2px;font-size:.9rem;font-weight:700;}
+@media (max-width:700px){.nav-links{display:none;}}
+.hero{position:relative;background:linear-gradient(160deg,var(--espresso) 0%,var(--espresso-2) 55%,var(--oxblood) 130%);color:var(--ivory);padding:100px 24px 90px;text-align:center;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(201,162,39,0.12) 1.5px,transparent 1.5px);background-size:26px 26px;opacity:.6;}
+.hero-inner{position:relative;max-width:720px;margin:0 auto;}
+.eyebrow{letter-spacing:4px;font-size:.78rem;color:var(--brass);text-transform:uppercase;font-weight:700;margin-bottom:18px;}
+.hero h1{color:var(--ivory);font-size:clamp(2.4rem,6vw,4rem);line-height:1.25;margin-bottom:18px;}
+.hero p{color:var(--ivory-2);font-size:1.1rem;max-width:520px;margin:0 auto 34px;}
+.btn{display:inline-block;padding:14px 34px;border-radius:2px;font-weight:700;font-size:1rem;transition:transform .2s ease,box-shadow .2s ease;}
+.btn-primary{background:var(--brass);color:var(--espresso);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(201,162,39,.35);}
+.btn-outline{border:1.5px solid var(--ivory-2);color:var(--ivory);margin-inline-start:12px;}
+.btn-outline:hover{background:rgba(241,232,221,.1);}
+section{padding:70px 24px;}
+.container{max-width:1100px;margin:0 auto;}
+.section-head{text-align:center;max-width:600px;margin:0 auto 46px;}
+.section-head .eyebrow{color:var(--tan);}
+.section-head h2{font-size:2.2rem;margin-bottom:12px;}
+.section-head p{color:#5b4a3d;}
+.cat-label{display:flex;align-items:center;gap:14px;margin:0 0 28px;font-family:'Aref Ruqaa',serif;font-size:1.5rem;color:var(--oxblood);}
+.cat-label::after{content:"";flex:1;height:1px;background:var(--ivory-2);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:26px;margin-bottom:60px;}
+.card{background:#fff;border:1px solid var(--ivory-2);border-radius:4px;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(43,27,20,.12);}
+.thumb{aspect-ratio:1/1;background:repeating-linear-gradient(45deg,var(--ivory-2),var(--ivory-2) 10px,#fff 10px,#fff 20px);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--tan);font-size:.85rem;font-weight:700;padding:14px;border-bottom:1px dashed var(--tan);}
+.card-body{padding:16px 18px 20px;}
+.card-body h3{font-family:'Tajawal',sans-serif;font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.price{color:var(--oxblood);font-weight:900;font-size:1.05rem;margin-bottom:12px;}
+.order-btn{display:block;text-align:center;background:var(--espresso);color:var(--ivory);padding:9px 0;border-radius:2px;font-size:.88rem;font-weight:700;}
+.order-btn:hover{background:var(--oxblood);}
+.contact{background:var(--espresso-2);color:var(--ivory);}
+.contact .section-head p{color:var(--ivory-2);}
+.contact .section-head .eyebrow{color:var(--brass);}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+.contact-card{background:rgba(241,232,221,0.06);border:1px solid rgba(241,232,221,0.16);border-radius:4px;padding:26px 20px;text-align:center;transition:background .2s ease,transform .2s ease;}
+.contact-card:hover{background:rgba(201,162,39,0.12);transform:translateY(-3px);}
+.contact-card .icon{width:44px;height:44px;margin:0 auto 14px;color:var(--brass);}
+.contact-card .icon svg{width:100%;height:100%;}
+.contact-card h3{color:var(--ivory);font-family:'Tajawal',sans-serif;font-size:1rem;margin-bottom:6px;}
+.contact-card p{color:var(--ivory-2);font-size:.92rem;direction:ltr;unicode-bidi:plaintext;}
+footer{background:var(--espresso);color:var(--ivory-2);text-align:center;padding:34px 24px 28px;font-size:.85rem;}
+footer .brand{color:var(--ivory);font-size:1.2rem;margin-bottom:6px;}
+.float-wa{position:fixed;bottom:22px;left:22px;z-index:60;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:transform .2s ease;}
+.float-wa:hover{transform:scale(1.08);}
+.float-wa svg{width:28px;height:28px;fill:#fff;}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<div class="brand">Bouchra <span>Store</span></div>
+<nav class="nav-links">
+<a href="#bags">الحقائب</a>
+<a href="#shoes">الأحذية</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
+<a class="nav-cta" href="https://wa.me/19102866924" target="_blank" rel="noopener">اطلبي الآن</a>
+</div>
+</header>
+<section class="hero">
+<div class="hero-inner">
+<div class="eyebrow">حقائب × أحذية نسائية</div>
+<h1>لمسة أنوثة تحملينها معك</h1>
+<p>تشكيلة مختارة من الحقائب والأحذية النسائية بجودة عالية وأسعار مناسبة. اطلبي عبر واتساب أو سناب شات أو الإيميل.</p>
+<a class="btn btn-primary" href="https://wa.me/19102866924" target="_blank" rel="noopener">تواصلي عبر واتساب</a>
+<a class="btn btn-outline" href="#bags">تصفحي المنتجات</a>
+</div>
+</section>
+<div class="stitch"><div class="rivet"></div></div>
+<section id="bags">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">تشكيلتنا</div>
+<h2>المنتجات</h2>
+<p>اضغطي "اطلبيها" وسيتم فتح واتساب مع اسم المنتج جاهزًا للإرسال.</p>
+</div>
+<div class="cat-label">الحقائب النسائية</div>
+<div class="grid" id="bags-grid"></div>
+<div class="cat-label" id="shoes">الأحذية النسائية</div>
+<div class="grid" id="shoes-grid"></div>
+</div>
+</section>
+<div class="stitch"><div class="rivet"></div></div>
+<section class="contact" id="contact">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">تواصلي معنا</div>
+<h2>كيف تطلبين؟</h2>
+<p>اختاري الطريقة الأسهل بالنسبة لك.</p>
+</div>
+<div class="contact-grid">
+<a class="contact-card" href="https://wa.me/19102866924" target="_blank" rel="noopener">
+<div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.4-1.36a9.9 9.9 0 0 0 4.64 1.15h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.25.7-1.25 1.28-2.03 1.44-.55.11-1.26.2-3.66-.79-3.07-1.27-5.05-4.4-5.2-4.6-.15-.2-1.24-1.65-1.24-3.15 0-1.5.78-2.24 1.06-2.54.28-.3.6-.38.8-.38h.58c.19 0 .44-.04.68.52.25.6.85 2.1.92 2.25.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.13.07.72-.18 1.42z"/></svg></div>
+<h3>واتساب</h3><p>+1 (910) 286-6924</p>
+</a>
+<a class="contact-card" href="https://snapchat.com/add/bdahmoud" target="_blank" rel="noopener">
+<div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c3.3 0 5.6 2.5 5.6 5.9 0 1.1-.05 2-.11 2.7.5.15.98.4 1.36.86.2.24.19.55-.02.78-.5.55-1.5.9-2.1 1.06.05.35.28.9.98 1.5.9.78 2.1.98 2.1 1.4 0 .5-1.1.85-2.1 1-.1.32-.22.72-.36 1.05-.1.24-.32.32-.55.28-.4-.07-.85-.15-1.4-.15-.55 0-1 .2-1.5.5-.65.4-1.35.85-2.9.85s-2.25-.45-2.9-.85c-.5-.3-.95-.5-1.5-.5-.55 0-1 .08-1.4.15-.23.04-.45-.04-.55-.28-.14-.33-.26-.73-.36-1.05-1-.15-2.1-.5-2.1-1 0-.42 1.2-.62 2.1-1.4.7-.6.93-1.15.98-1.5-.6-.16-1.6-.5-2.1-1.06-.21-.23-.22-.54-.02-.78.38-.46.86-.7 1.36-.86-.06-.7-.11-1.6-.11-2.7C6.4 4.5 8.7 2 12 2z"/></svg></div>
+<h3>سناب شات</h3><p>@bdahmoud</p>
+</a>
+<a class="contact-card" href="tel:+22236480548">
+<div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg></div>
+<h3>رقم الهاتف</h3><p>+222 36 48 05 48</p>
+</a>
+<a class="contact-card" href="mailto:Bouchradh37@gmail.com">
+<div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 5.5C2 4.7 2.7 4 3.5 4h17c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5h-17C2.7 20 2 19.3 2 18.5v-13zM4 6l8 5.5L20 6H4zm16 2.2-7.4 5.1a1 1 0 0 1-1.2 0L4 8.2V18h16V8.2z"/></svg></div>
+<h3>البريد الإلكتروني</h3><p>Bouchradh37@gmail.com</p>
+</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="brand">Bouchra Store</div>
+<p>حقائب وأحذية نسائية · التوصيل متوفر عبر الطلب المباشر</p>
+</footer>
+<a class="float-wa" href="https://wa.me/19102866924" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+<svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.83L2 22l5.4-1.36a9.9 9.9 0 0 0 4.64 1.15h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.02c-.25.7-1.25 1.28-2.03 1.44-.55.11-1.26.2-3.66-.79-3.07-1.27-5.05-4.4-5.2-4.6-.15-.2-1.24-1.65-1.24-3.15 0-1.5.78-2.24 1.06-2.54.28-.3.6-.38.8-.38h.58c.19 0 .44-.04.68.52.25.6.85 2.1.92 2.25.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.13.07.72-.18 1.42z"/></svg>
+</a>
+<script>
+const bags = [
+{name:"حقيبة 1",price:"أدخلي السعر",img:""},{name:"حقيبة 2",price:"أدخلي السعر",img:""},
+{name:"حقيبة 3",price:"أدخلي السعر",img:""},{name:"حقيبة 4",price:"أدخلي السعر",img:""},
+{name:"حقيبة 5",price:"أدخلي السعر",img:""},{name:"حقيبة 6",price:"أدخلي السعر",img:""},
+{name:"حقيبة 7",price:"أدخلي السعر",img:""},{name:"حقيبة 8",price:"أدخلي السعر",img:""},
+{name:"حقيبة 9",price:"أدخلي السعر",img:""},{name:"حقيبة 10",price:"أدخلي السعر",img:""},
+{name:"حقيبة 11",price:"أدخلي السعر",img:""},{name:"حقيبة 12",price:"أدخلي السعر",img:""},
+{name:"حقيبة 13",price:"أدخلي السعر",img:""},{name:"حقيبة 14",price:"أدخلي السعر",img:""},
+{name:"حقيبة 15",price:"أدخلي السعر",img:""}
+];
+const shoes = [
+{name:"حذاء 1",price:"أدخلي السعر",img:""},{name:"حذاء 2",price:"أدخلي السعر",img:""},
+{name:"حذاء 3",price:"أدخلي السعر",img:""},{name:"حذاء 4",price:"أدخلي السعر",img:""}
+];
+const waNumber = "19102866924";
+function renderGrid(items, containerId){
+const el = document.getElementById(containerId);
+el.innerHTML = items.map(item => {
+const thumb = item.img
+? `<div class="thumb" style="background-image:url('${item.img}');background-size:cover;background-position:center;"></div>`
+: `<div class="thumb">أضيفي صورة هنا<br>📷</div>`;
+const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent("مرحبًا، أرغب في الاستفسار عن: " + item.name)}`;
+return `<div class="card">${thumb}<div class="card-body"><h3>${item.name}</h3><div class="price">${item.price}</div><a class="order-btn" href="${waLink}" target="_blank" rel="noopener">اطلبيها عبر واتساب</a></div></div>`;
+}).join("");
+}
+renderGrid(bags, "bags-grid");
+renderGrid(shoes, "shoes-grid");
+</script>
+</body>
+</html>
